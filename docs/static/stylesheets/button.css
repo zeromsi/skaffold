@@ -1,0 +1,29 @@
+.splashbutton {
+    display: inline-block;
+    text-align: center;
+    font-size: 18px;
+    border: 2px solid rgb(1, 63, 83);
+    
+    -webkit-transition-duration: 0.3s; /* Safari */
+    transition-duration: 0.3s;
+}
+
+.splashbutton-primary {
+    background-color: rgb(0, 103, 138);
+    color:white;
+}
+
+.splashbutton-primary:hover {
+    background-color: rgb(1, 67, 88);
+    color: white;
+}
+
+.splashbutton-secondary {
+    background-color: white;
+    color: rgb(1, 63, 83);
+}
+
+.splashbutton-secondary:hover {
+    background-color: rgb(192, 192, 192);
+    color: rgb(1, 63, 83);
+}
