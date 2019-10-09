@@ -12,13 +12,13 @@ more information.
 
 In this quickstart, you will:
 
-* Install Skaffold,
 * Download a sample go app,
 * Use `skaffold dev` to build and deploy your app every time your code changes,
 * Use `skaffold run` to build and deploy your app once, on demand.
 
 ## Before you begin
 
+* [Install Skaffold](/docs/installation)
 * [Install Docker](https://www.docker.com/get-started)
 * [Install kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl/)
 * Configure `kubectl` to connect to a Kubernetes cluster. You can use
