@@ -121,6 +121,9 @@ Exceptions will always be announced in all relevant release notes.
 No active deprecation notices. 
 
 ## Past deprecation notices
+No active deprecation notices.
+
+## Past deprecation notices
 
 03/15/2019: With release v0.25.0 we mark for deprecation the `flags` field in kaniko (`KanikoArtifact.AdditionalFlags`) , instead Kaniko's additional flags will now be represented as unique fields under `kaniko` per artifact (`KanikoArtifact` type).
 This flag will will be removed earliest 06/15/2019.
