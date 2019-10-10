@@ -16,5 +16,14 @@
         "**/.*",
         "**/node_modules/**"
       ]
+    },
+    {
+      "target": "staging",
+      "public": "public",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ]
     }]
 }

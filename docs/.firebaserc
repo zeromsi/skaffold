@@ -7,6 +7,9 @@
         ],
         "head": [
           "skaffold-latest"
+        ],
+         "staging": [
+          "skaffold-staging"
         ]
       }
     }
