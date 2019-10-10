@@ -64,30 +64,29 @@ The following is the maturity of the larger feature areas:
 
 |area|state|description|
 |----|----|----|
-[Build]({{<relref "/docs/features/builders" >}})|GA |Build images based on multiple build tools in a configurable way
-Completion|GA |generate completion scripts for bash, zsh
+[Build]({{< relref "/docs/how-tos/builders" >}})|GA |Build images based on multiple build tools in a configurable way
 Control API |beta|Applications can control sync, build and deployment during instead of automated sync, build and deploy
-Debug|beta|Language-aware reconfiguration of containers on the fly to become debuggable 
-Default-repo|beta|specify a default image repository & rewrite image names to default repo
+[Debug]({{< relref "/docs/how-tos/debug" >}})|beta|Language-aware reconfiguration of containers on the fly to become debuggable 
+[Default-repo]({{< relref "/docs/concepts/image_repositories" >}})|beta|specify a default image repository & rewrite image names to default repo
 Delete|GA |delete everything deployed by skaffold run from the cluster
-Deploy|GA |Deploy a set of deployables as your applications and replace the image name with the built images 
+[Deploy] ({{< relref "docs/how-tos/deployers" >}})|GA |Deploy a set of deployables as your applications and replace the image name with the built images 
 Dev|GA |Continuous development
 Diagnose|GA |Diagnose the current project and its configuration
 Event API v1|beta|Publish events and state of the application on gRPC and HTTP
-Filesync|alpha|Instead of rebuilding, copy the changed files in the running container
-Global config|beta|store user preferences in a separate preferences file
+[Filesync]({{< relref "/docs/how-tos/filesync" >}})|alpha|Instead of rebuilding, copy the changed files in the running container
+[Global config]({{< relref "/docs/concepts/config" >}})|beta|store user preferences in a separate preferences file
 Init|alpha|Initialize a skaffold.yaml file based on the contents of the current directory
 Insecure registry handling|GA |Target registries for built images which are not secure
-Port-forwarding|GA |Port forward application to localhost
-Profiles|GA |Create different pipeline configurations based on overrides and patches defined in one or more profiles
+[Port-forwarding]({{< relref "/docs/how-tos/portforward" >}})|GA |Port forward application to localhost
+[Profiles]({{< relref "/docs/how-tos/profiles" >}})|GA |Create different pipeline configurations based on overrides and patches defined in one or more profiles
 skaffold build |GA |run skaffold build separately
 skaffold fix|GA |Upgrade an older skaffold config to the current version
 skaffold run|GA |One-off build & deployment of the skaffold application
-Tagpolicy|GA |Automated tagging
-Test|GA |Run tests as part of your pipeline
+[Tagpolicy]({{< relref "/docs/how-tos/taggers" >}})|GA |Automated tagging
+[Test]({{< relref "/docs/how-tos/testers" >}})|GA |Run tests as part of your pipeline
 Trigger|GA |Feature area: Trigger configured actions when source files change
 version|beta|get the version string of the current skaffold binary
-Templating|alpha|certain fields of skaffold.yaml can be parametrized with environment and built-in variables
+[Templating]({{< relref "/docs/how-tos/templating" >}})|alpha|certain fields of skaffold.yaml can be parametrized with environment and built-in variables
 
 Within a feature area we do have certain features that are expected to change: 
 
