@@ -38,6 +38,7 @@ import (
 
 func TestNewSyncItem(t *testing.T) {
 	tests := []struct {
+		ctx          context.Context
 		description  string
 		artifact     *latest.Artifact
 		dependencies map[string][]string
@@ -642,7 +643,7 @@ func TestNewSyncItem(t *testing.T) {
 			})
 
 			provider := func() (map[string][]string, error) { return test.dependencies, nil }
-			actual, err := NewItem(test.artifact, test.evt, test.builds, nil, provider)
+			actual, err := NewItem(test.ctx, test.artifact, test.evt, test.builds, nil, provider)
 
 			t.CheckErrorAndDeepEqual(test.shouldErr, err, test.expected, actual)
 		})

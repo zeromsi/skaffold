@@ -44,7 +44,7 @@ var (
 	WorkingDir = docker.RetrieveWorkingDir
 )
 
-func NewItem(a *latest.Artifact, e filemon.Events, builds []build.Artifact, insecureRegistries map[string]bool, destProvider DestinationProvider) (*Item, error) {
+func NewItem(ctx context.Context, a *latest.Artifact, e filemon.Events, builds []build.Artifact, insecureRegistries map[string]bool, destProvider DestinationProvider) (*Item, error) {
 	if !e.HasChanged() || a.Sync == nil {
 		return nil, nil
 	}
@@ -55,6 +55,10 @@ func NewItem(a *latest.Artifact, e filemon.Events, builds []build.Artifact, inse
 
 	if len(a.Sync.Infer) > 0 {
 		return inferredSyncItem(a, e, builds, destProvider)
+	}
+
+	if a.Sync.Auto != nil {
+		return autoSyncItem(ctx, a, e, builds)
 	}
 
 	return nil, nil
@@ -136,6 +140,20 @@ func inferredSyncItem(a *latest.Artifact, e filemon.Events, builds []build.Artif
 	}
 
 	return &Item{Image: tag, Copy: toCopy}, nil
+}
+
+func autoSyncItem(ctx context.Context, a *latest.Artifact, e filemon.Events, builds []build.Artifact) (*Item, error) {
+	tag := latestTag(a.ImageName, builds)
+	if tag == "" {
+		return nil, fmt.Errorf("could not find latest tag for image %s in builds: %v", a.ImageName, builds)
+	}
+
+	// placeholder
+	_ = ctx
+	_ = e
+
+	// insert auto-sync implementations here
+	return nil, fmt.Errorf("sync: auto is not supported by the build of %s", a.ImageName)
 }
 
 func latestTag(image string, builds []build.Artifact) string {
@@ -259,4 +277,9 @@ func Perform(ctx context.Context, image string, files syncMap, cmdFn func(contex
 	}
 
 	return errs.Wait()
+}
+
+func Init(ctx context.Context, artifacts []*latest.Artifact) error {
+	// initialize sync state for implementations that required it
+	return nil
 }
